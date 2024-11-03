@@ -1,15 +1,17 @@
 [project]
 name = "iapyc"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Yet another IaC tool"
 authors = [
     {name = "CYTMWIA"},
 ]
-dependencies = []
+dependencies = [
+    "fabric",
+    "jinja2",
+    "pyyaml",
+    "ansible-core",
+    "colorama",
+]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "MIT"}
-
-
-[tool.pdm]
-distribution = false
