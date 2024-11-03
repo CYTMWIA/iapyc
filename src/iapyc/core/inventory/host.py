@@ -23,7 +23,12 @@ class Host:
         return False
 
     def get_var(self, name: str):
+        # 从 host 配置寻找
         v = self.vars.get(name, None)
+        if name in self.vars:  # 若含有 name 配置项，则优先使用，哪怕是 None
+            return v
+
+        # 若 host 配置为 None ，则从 group 配置寻找
         gi = iter(self.groups)
         while v is None:
             g = next(gi, None)
